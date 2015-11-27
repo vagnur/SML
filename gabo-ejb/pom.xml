@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>gabo</artifactId>
+    <artifactId>gabo2</artifactId>
     <groupId>pingeso</groupId>
     <version>1.0</version>
   </parent>
 
     <groupId>pingeso</groupId>
-    <artifactId>gabo-ejb</artifactId>
+    <artifactId>gabo2-ejb</artifactId>
     <version>1.0</version>
     <packaging>ejb</packaging>
 
-    <name>gabo-ejb</name>
+    <name>gabo2-ejb</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class InformeFacade extends AbstractFacade<Informe> implements InformeFacadeLocal {
 
-    @PersistenceContext(unitName = "pingeso_gabo-ejb_ejb_1.0PU")
+    @PersistenceContext(unitName = "pingeso_gabo2-ejb_ejb_1.0PU")
     private EntityManager em;
 
     @Override

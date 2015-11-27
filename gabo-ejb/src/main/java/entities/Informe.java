@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
-import static javax.persistence.TemporalType.DATE;
 import javax.validation.constraints.*;
 
 /**
@@ -28,11 +27,10 @@ public class Informe implements Serializable {
     private Long id;
     
     @NotNull(message = "Debe ingresar un número de informe")
-    private Long numeroinforme;
+    private String numeroinforme;
     
     @NotNull(message = "Debe ingresar una fecha")
-    @Past
-    @Temporal(DATE)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fecha;
     
     @NotNull(message = "Debe ingresar el nombre del afectado")
@@ -69,11 +67,11 @@ public class Informe implements Serializable {
         this.id = id;
     }
 
-    public Long getNumeroinforme() {
+    public String getNumeroinforme() {
         return numeroinforme;
     }
 
-    public void setNumeroinforme(Long numeroinforme) {
+    public void setNumeroinforme(String numeroinforme) {
         this.numeroinforme = numeroinforme;
     }
     
@@ -92,7 +90,7 @@ public class Informe implements Serializable {
 
     @Override
     public String toString() {
-        return "Informe: "+id;
+        return "Informe: "+this.numeroinforme;
     }
     
 }

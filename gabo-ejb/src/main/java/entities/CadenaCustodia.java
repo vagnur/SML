@@ -26,10 +26,7 @@ public class CadenaCustodia implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotNull(message = "Debe ingresar un número para la cadena de custodia")
-    private Long numerocadenacustodia;
-    
+       
     @NotNull(message = "Debe ingresar el RUC")
     private Long RUC;
     
@@ -73,11 +70,12 @@ public class CadenaCustodia implements Serializable {
     @NotNull(message = "Debe ingresar el cargo de la persona")
     private String cargo;
     
+    @NotNull(message = "Debe ingresar el NUE")
+    private Long NUE;
+    
     @ManyToOne
     private Informe informe;
-
-    
-    
+   
     public Date getFecha() {
         return fecha;
     }
@@ -214,13 +212,13 @@ public class CadenaCustodia implements Serializable {
         this.id = id;
     }
 
-    public Long getNumerocadenacustodia() {
-        return numerocadenacustodia;
+    public Long getNUE() {
+        return NUE;
     }
 
-    public void setNumerocadenacustodia(Long numerocadenacustodia) {
-        this.numerocadenacustodia = numerocadenacustodia;
-    }  
+    public void setNUE(Long NUE) {
+        this.NUE = NUE;
+    }
 
     @Override
     public int hashCode() {

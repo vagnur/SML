@@ -1,13 +1,13 @@
+sessionbeans\ReciboFacadeLocal.class
 sessionbeans\InformeFacadeLocal.class
 entities\Informe.class
+entities\Recibo.class
+entities\Recibo_.class
 entities\CadenaCustodia.class
 entities\CadenaCustodia_.class
+sessionbeans\ReciboFacade.class
 sessionbeans\CadenaCustodiaFacade.class
 entities\Informe_.class
-sessionbeans\InfoCCFacadeLocal.class
 sessionbeans\InformeFacade.class
-sessionbeans\InfoCCFacade.class
-entities\InfoCC.class
 sessionbeans\AbstractFacade.class
 sessionbeans\CadenaCustodiaFacadeLocal.class
-entities\InfoCC_.class
