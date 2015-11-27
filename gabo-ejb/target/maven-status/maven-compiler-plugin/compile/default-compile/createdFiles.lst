@@ -1,0 +1,13 @@
+sessionbeans\InformeFacadeLocal.class
+entities\Informe.class
+entities\CadenaCustodia.class
+entities\CadenaCustodia_.class
+sessionbeans\CadenaCustodiaFacade.class
+entities\Informe_.class
+sessionbeans\InfoCCFacadeLocal.class
+sessionbeans\InformeFacade.class
+sessionbeans\InfoCCFacade.class
+entities\InfoCC.class
+sessionbeans\AbstractFacade.class
+sessionbeans\CadenaCustodiaFacadeLocal.class
+entities\InfoCC_.class

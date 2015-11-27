@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InfoCCEditDlg" widgetVar="InfoCCEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditInfoCCTitle}">
+            <h:form id="InfoCCEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{infoCCController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_fecha}" for="fecha" />
+                        <p:calendar id="fecha" pattern="MM/dd/yyyy" value="#{infoCCController.selected.fecha}" title="#{bundle.EditInfoCCTitle_fecha}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_entregaNombre}" for="entregaNombre" />
+                        <p:inputText id="entregaNombre" value="#{infoCCController.selected.entregaNombre}" title="#{bundle.EditInfoCCTitle_entregaNombre}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_entregaCargo}" for="entregaCargo" />
+                        <p:inputText id="entregaCargo" value="#{infoCCController.selected.entregaCargo}" title="#{bundle.EditInfoCCTitle_entregaCargo}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_recibeNombre}" for="recibeNombre" />
+                        <p:inputText id="recibeNombre" value="#{infoCCController.selected.recibeNombre}" title="#{bundle.EditInfoCCTitle_recibeNombre}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_recibeCargo}" for="recibeCargo" />
+                        <p:inputText id="recibeCargo" value="#{infoCCController.selected.recibeCargo}" title="#{bundle.EditInfoCCTitle_recibeCargo}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_cadenaCustodia}" for="cadenaCustodia" />
+                        <p:selectOneMenu id="cadenaCustodia" value="#{infoCCController.selected.cadenaCustodia}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{cadenaCustodiaController.itemsAvailableSelectOne}"
+                                           var="cadenaCustodiaItem"
+                                           itemValue="#{cadenaCustodiaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{infoCCController.selected.id}" title="#{bundle.EditInfoCCTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_hora}" for="hora" />
+                        <p:inputText id="hora" value="#{infoCCController.selected.hora}" title="#{bundle.EditInfoCCTitle_hora}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_entregaUnidad}" for="entregaUnidad" />
+                        <p:inputText id="entregaUnidad" value="#{infoCCController.selected.entregaUnidad}" title="#{bundle.EditInfoCCTitle_entregaUnidad}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_entregaRun}" for="entregaRun" />
+                        <p:inputText id="entregaRun" value="#{infoCCController.selected.entregaRun}" title="#{bundle.EditInfoCCTitle_entregaRun}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_recibeUnidad}" for="recibeUnidad" />
+                        <p:inputText id="recibeUnidad" value="#{infoCCController.selected.recibeUnidad}" title="#{bundle.EditInfoCCTitle_recibeUnidad}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_recibeRun}" for="recibeRun" />
+                        <p:inputText id="recibeRun" value="#{infoCCController.selected.recibeRun}" title="#{bundle.EditInfoCCTitle_recibeRun}" />
+                        <p:outputLabel value="#{bundle.EditInfoCCLabel_motivo}" for="motivo" />
+                        <p:inputText id="motivo" value="#{infoCCController.selected.motivo}" title="#{bundle.EditInfoCCTitle_motivo}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{infoCCController.update}" value="#{bundle.Save}" update="display,:InfoCCListForm:datalist,:growl" oncomplete="handleSubmit(args, 'InfoCCEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="InfoCCEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
