@@ -53,9 +53,12 @@ public class Recibo implements Serializable {
     private String recibeCargo;
     
     private String recibeRun;
+   
+    private boolean peritaje;
     
-    @NotNull(message = "Debe ingresar un motivo de la lista")
-    private String motivo;
+    private boolean custodia;
+    
+    private boolean traslado;
     
     private String observacion;
     
@@ -70,6 +73,30 @@ public class Recibo implements Serializable {
         this.fecha = fecha;
     }
 
+    public boolean isPeritaje() {
+        return peritaje;
+    }
+
+    public void setPeritaje(boolean peritaje) {
+        this.peritaje = peritaje;
+    }
+
+    public boolean isCustodia() {
+        return custodia;
+    }
+
+    public void setCustodia(boolean custodia) {
+        this.custodia = custodia;
+    }
+
+    public boolean isTraslado() {
+        return traslado;
+    }
+
+    public void setTraslado(boolean traslado) {
+        this.traslado = traslado;
+    }
+    
     public String getEntregaNombre() {
         return entregaNombre;
     }
@@ -156,14 +183,6 @@ public class Recibo implements Serializable {
 
     public void setRecibeRun(String recibeRun) {
         this.recibeRun = recibeRun;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
     }
 
     public String getObservacion() {
