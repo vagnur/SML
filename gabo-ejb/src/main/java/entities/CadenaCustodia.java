@@ -196,14 +196,6 @@ public class CadenaCustodia implements Serializable {
         this.observaciones = observaciones;
     }
 
-    public Long getCadenacustodiaid() {
-        return id;
-    }
-
-    public void setCadenacustodiaid(Long cadenacustodiaid) {
-        this.id = cadenacustodiaid;
-    }
-
     public Long getId() {
         return id;
     }
