@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+            <h:panelGrid columns="2" cellpadding="5" >
+                
+                <p:outputLabel for="nue" value="N.U.E:" />
+                <p:inputText id="nue" value="#{cadenaCustodiaController.selected.NUE}"/>
+                
+                <p:outputLabel for="fecha" value="Fecha:" />
+                <p:calendar id="fecha" value="#{cadenaCustodiaController.selected.fecha}" />
+
+                <p:outputLabel for="hora" value="Hora:" />
+                <p:calendar id="hora" value="#{cadenaCustodiaController.selected.hora}" pattern="HH:mm" timeOnly="true"  />
+            </h:panelGrid>
+ 
+            <p:commandButton value="Agregar" update="msgs" actionListener="#{cadenaCustodiaController.create}" icon="ui-icon-check" />
+
+        </h:form>
+        
+    </h:body>
+</html>

@@ -234,7 +234,7 @@ public class CadenaCustodia implements Serializable {
 
     @Override
     public String toString() {
-        return "Cadena de Cusotdia: "+id;
+        return "Cadena de Cusotdia: "+NUE;
     }
     
 }

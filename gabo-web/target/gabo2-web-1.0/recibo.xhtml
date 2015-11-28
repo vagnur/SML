@@ -3,12 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
+               
+        <p:panel header="Cadena de Custodia" style="margin-bottom:20px">
+            <h3>N.U.E:</h3> <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).NUE}"/>
+            <p:panelGrid columns="2" style="width:20%;margin:10px 0px" columnClasses="label,value" styleClass="ui-panelgrid-blank">
+                <h:outputText value="R.U.C:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).RUC}" />
+
+                <h:outputText value="R.I.T" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).RIT}" />
+            </p:panelGrid>
+            
+            <p:panelGrid columns="2" style="width:80%;margin:10px 0px" columnClasses="label,value" styleClass="ui-panelgrid-blank">
+                <h:outputText value="Delito:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).delito}" />
+
+                <h:outputText value="Fecha" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).fecha}" />
+                
+                <h:outputText value="Hora" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).hora}" />
+                
+                <h:outputText value="Dirección de S.S" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).SS}" />
+                
+                <h:outputText value="Lugar exacto del levantamiento" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).obtencion}" />
+                
+                <h:outputText value="Descripcción de la especie" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).descripcion}" />
+            </p:panelGrid>
+            
+            <p:panelGrid columns="2" style="width:80%;margin:10px 0px"  styleClass="ui-panelgrid-blank">
+                <h:outputText value="N° Parte:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).parte}" />
+
+                <h:outputText value="Unidad Policial:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).unidadPolicial}" />
+                
+                <h:outputText value="Levantada Por:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).levantada}" />
+                
+                <h:outputText value="R.U.N:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).RUN}" />
+                
+                <h:outputText value="Cargo:" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).cargo}" />
+                
+                <h:outputText value="Observaciones" />
+                <h:outputText value="#{cadenaCustodiaController.getCadenaCustodia(1).observaciones}" />
+            </p:panelGrid>
+        </p:panel>
+        
         <p:carousel numVisible="1" value="#{reciboController.items}" headerText="Recibos" var="recibo" itemStyle="text-align:center" >
             <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" styleClass="ui-panelgrid-blank">
                 <h:outputText value="Fecha:" />
@@ -52,9 +105,9 @@
                 <h:outputText value="Custodia" />
                 <h:outputText value="Peritaje" />
                 <h:outputText value="Traslado" />
-                <h:outputText value="#{recibo.custodia}" />
-                <h:outputText value="#{recibo.peritaje}" />
-                <h:outputText value="#{recibo.traslado}" />
+                <h:outputText value="#{recibo.custodia}"/>
+                <h:outputText value="#{recibo.peritaje}"/>
+                <h:outputText value="#{recibo.traslado}"/>
             </p:panelGrid>
         </p:carousel>
     </h:body>
