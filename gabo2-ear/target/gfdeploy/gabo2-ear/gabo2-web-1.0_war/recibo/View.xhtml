@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ReciboViewDlg" widgetVar="ReciboViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewReciboTitle}">
+            <h:form id="ReciboViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{reciboController.selected != null}">
+                        <h:outputText value="#{bundle.ViewReciboLabel_fecha}"/>
+                        <h:outputText value="#{reciboController.selected.fecha}" title="#{bundle.ViewReciboTitle_fecha}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewReciboLabel_entregaNombre}"/>
+                        <h:outputText value="#{reciboController.selected.entregaNombre}" title="#{bundle.ViewReciboTitle_entregaNombre}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_entregaCargo}"/>
+                        <h:outputText value="#{reciboController.selected.entregaCargo}" title="#{bundle.ViewReciboTitle_entregaCargo}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_recibeNombre}"/>
+                        <h:outputText value="#{reciboController.selected.recibeNombre}" title="#{bundle.ViewReciboTitle_recibeNombre}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_recibeCargo}"/>
+                        <h:outputText value="#{reciboController.selected.recibeCargo}" title="#{bundle.ViewReciboTitle_recibeCargo}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_cadenaCustodia}"/>
+                        <h:outputText value="#{reciboController.selected.cadenaCustodia}" title="#{bundle.ViewReciboTitle_cadenaCustodia}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_id}"/>
+                        <h:outputText value="#{reciboController.selected.id}" title="#{bundle.ViewReciboTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_hora}"/>
+                        <h:outputText value="#{reciboController.selected.hora}" title="#{bundle.ViewReciboTitle_hora}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_entregaUnidad}"/>
+                        <h:outputText value="#{reciboController.selected.entregaUnidad}" title="#{bundle.ViewReciboTitle_entregaUnidad}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_entregaRun}"/>
+                        <h:outputText value="#{reciboController.selected.entregaRun}" title="#{bundle.ViewReciboTitle_entregaRun}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_recibeUnidad}"/>
+                        <h:outputText value="#{reciboController.selected.recibeUnidad}" title="#{bundle.ViewReciboTitle_recibeUnidad}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_recibeRun}"/>
+                        <h:outputText value="#{reciboController.selected.recibeRun}" title="#{bundle.ViewReciboTitle_recibeRun}"/>
+                        <h:outputText value="#{bundle.ViewReciboLabel_observacion}"/>
+                        <h:outputText value="#{reciboController.selected.observacion}" title="#{bundle.ViewReciboTitle_observacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ReciboViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
